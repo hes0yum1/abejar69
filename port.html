@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonas Redfz Abejar | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Portfolio</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <img src="me.jpg" alt="Jonas Redfz C. Abejar" onclick="openModal('me.jpg', 'Hello, I am Jonas!')">
+        <h1>Hello and welcome, I'm Jonas Redfz Abejar</h1>
+        <p>A passionate IT student ready to learn and glad to help each and everyone grow.</p>
+        <a href="#contact" class="btn">Contact Me</a>
+    </section>
+
+    <section class="about" id="about">
+        <h2>About Me</h2>
+        <p>I am Jonas Redfz Abejar, a 21-year-old passionate and dedicated third-year IT student at Eastern Visayas State University – Ormoc City Campus. I currently reside in Brgy. Tambulilid, Ormoc City. Born in Calubian, Leyte, and raised in San Isidro, Leyte, I have always had a curiosity for technology. Though I’m just starting my journey in coding, I am eager to learn and grow in the field. My interest in IT continues to drive me to improve my skills and gain more hands-on experience through projects and coursework. I’m excited to explore the endless possibilities that technology offers and to build a strong foundation in coding and development.</p>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <h2>My Work</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item" onclick="openModal('DB.png', 'CRUD System - Manage data with ease with my refrigerator inventory system.')">
+                <img src="DB.png" alt="CRUD System">
+                <p>Project 1 - CRUD System</p>
+            </div>
+            <div class="portfolio-item" onclick="openModal('BIO DATA.png', 'Bio Data - My very first work! fill-up your personal details with my BIO DATA.')">
+                <img src="BIO DATA.png" alt="BIO DATA">
+                <p>Project 2 - Portfolio Website</p>
+            </div>
+            <div class="portfolio-item" onclick="openModal('API.png', 'PokeAPI- search the details of your favorite pokemon!')">
+                <img src="API.png" alt="PokeAPI">
+                <p>Project 3 - PokeAPI</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <p>If you have an inquiries pls don't hesitate in contacting me!</p>
+        <p>Email: <a href="mailto:jonasredfz.abejar@gmail.com">jonasredfz.abejar@gmail.com</a></p>
+        <p>Phone: <a href="tel:09991713083">09991713083</a></p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/jonasredfz.abejar?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Jonas Redfz Abejar. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <img id="modal-image" src="" alt="">
+            <p id="modal-text"></p>
+            <button class="modal-close" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.navbar').classList.toggle('active');
+        }
+
+        function openModal(image, text) {
+            const modal = document.getElementById('modal');
+            const modalImage = document.getElementById('modal-image');
+            const modalText = document.getElementById('modal-text');
+
+            modalImage.src = image;
+            modalText.textContent = text;
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
